@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#003b70">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Open Graph & Social Preview สำหรับ LINE / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ระบบสร้างภาพโปสเตอร์แสดงความยินดี | PSU LAMS">
+  <meta property="og:description" content="คณะศิลปศาสตร์และวิทยาการจัดการ มหาวิทยาลัยสงขลานครินทร์">
+  <meta property="og:site_name" content="Prince of Songkla University">
+
+  <!-- Fallback กรณีผู้ใช้ปิดการทำงานของ JavaScript -->
+  <meta http-equiv="refresh" content="0;url=https://script.google.com/a/macros/psu.ac.th/s/AKfycbxQCGHfNh5lvt-AuGD89apaccK1dMZ23TMsG4d5uCZO0sn4eavbk-6HCb6LClvFq8b5XQ/exec">
+
+  <title>กำลังเข้าสู่ระบบสร้างภาพโปสเตอร์ | PSU LAMS</title>
+
+  <style>
+    :root {
+      --psu-navy: #003b70;
+      --psu-blue: #0057a8;
+      --psu-light-blue: #eaf3fb;
+      --psu-gold: #d9a441;
+      --text-primary: #17324d;
+      --text-secondary: #61758a;
+      --surface: #ffffff;
+      --border: rgba(0, 59, 112, 0.1);
+      --shadow: 0 20px 60px rgba(0, 59, 112, 0.14);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100svh;
+      padding: 24px;
+      color: var(--text-primary);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(0, 87, 168, 0.08), transparent 32%),
+        linear-gradient(135deg, #f8fbfe 0%, #eef5fb 100%);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Thai", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .redirect-card {
+      width: min(100%, 450px);
+      padding: 40px 32px 34px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      color: #fff;
+      background: linear-gradient(145deg, var(--psu-blue), var(--psu-navy));
+      border-radius: 50%;
+      box-shadow: 0 10px 24px rgba(0, 59, 112, 0.24);
+    }
+
+    .brand-mark svg {
+      width: 38px;
+      height: 38px;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--psu-navy);
+      font-size: clamp(1.25rem, 4vw, 1.55rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      margin: 6px 0 0;
+      color: var(--psu-blue);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .message {
+      margin: 14px 0 24px;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .loading-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 28px;
+      color: var(--psu-blue);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid rgba(0, 87, 168, 0.2);
+      border-top-color: var(--psu-blue);
+      border-radius: 50%;
+      animation: spin 0.75s linear infinite;
+    }
+
+    .manual-action {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .manual-action.is-visible {
+      display: block;
+    }
+
+    .open-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 22px;
+      color: #fff;
+      background: var(--psu-navy);
+      border: 0;
+      border-radius: 12px;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 160ms ease;
+    }
+
+    .open-button:hover {
+      background: var(--psu-blue);
+      box-shadow: 0 8px 18px rgba(0, 59, 112, 0.2);
+    }
+
+    .footer-note {
+      margin: 28px 0 0;
+      color: #8a9aaa;
+      font-size: 0.76rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="redirect-card">
+    <div class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 48 48" fill="none">
+        <path d="M24 6 7 14.5 24 23l17-8.5L24 6Z" fill="currentColor" opacity=".95" />
+        <path d="M13 19.5V29c0 3.7 4.9 7 11 7s11-3.3 11-7v-9.5" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+        <path d="M41 15v10" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+        <circle cx="41" cy="29" r="2" fill="currentColor" />
+      </svg>
+    </div>
+
+    <h1>กำลังเข้าสู่ระบบ</h1>
+    <div class="subtitle">PSU LAMS Congratulatory Poster System</div>
+
+    <p class="message">
+      ระบบกำลังนำคุณไปยังหน้าบริการออนไลน์ ม.อ.<br>
+      กรุณารอสักครู่...
+    </p>
+
+    <div class="loading-area" role="status">
+      <span class="spinner" aria-hidden="true"></span>
+      <span>กำลังเปลี่ยนเส้นทาง...</span>
+    </div>
+
+    <div class="manual-action" id="manual-action">
+      <a class="open-button" id="open-button" href="https://script.google.com/a/macros/psu.ac.th/s/AKfycbxQCGHfNh5lvt-AuGD89apaccK1dMZ23TMsG4d5uCZO0sn4eavbk-6HCb6LClvFq8b5XQ/exec">
+        คลิกที่นี่เพื่อเปิดระบบโดยตรง
+      </a>
+    </div>
+
+    <p class="footer-note">
+      คณะศิลปศาสตร์และวิทยาการจัดการ มหาวิทยาลัยสงขลานครินทร์
+    </p>
+  </main>
+
+  <script>
+    (() => {
+      "use strict";
+
+      // ลิงก์ Deployment องค์กร psu.ac.th
+      const DESTINATION = "https://script.google.com/a/macros/psu.ac.th/s/AKfycbxQCGHfNh5lvt-AuGD89apaccK1dMZ23TMsG4d5uCZO0sn4eavbk-6HCb6LClvFq8b5XQ/exec";
+      const manualAction = document.getElementById("manual-action");
+
+      const getTargetUrl = () => {
+        try {
+          const url = new URL(DESTINATION);
+          url.search = window.location.search;
+          url.hash = window.location.hash;
+          return url.href;
+        } catch (e) {
+          return DESTINATION;
+        }
+      };
+
+      try {
+        // เปลี่ยนเส้นทางทันทีโดยไม่บันทึกลง History ย้อนกลับ
+        window.location.replace(getTargetUrl());
+      } catch (err) {
+        manualAction.classList.add("is-visible");
+      }
+
+      // แสดงปุ่มสำรองหลังจากผ่านไป 3 วินาที หากมีการเชื่อมต่อช้า
+      setTimeout(() => {
+        if (manualAction) manualAction.classList.add("is-visible");
+      }, 3000);
+    })();
+  </script>
+</body>
+</html>
